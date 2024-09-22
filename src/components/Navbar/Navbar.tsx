@@ -1,6 +1,6 @@
 export function Navbar () {
   return (
-    <nav className="bg-color-td rounded-lg shadow m-4">
+    <nav className="bg-color-td shadow">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="/src/assets/logo.svg" className="h-8" alt="Flowbite Logo" />
@@ -14,10 +14,7 @@ export function Navbar () {
         <div className="hidden w-full md:block md:w-auto" id="navbar-default">
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
             <li>
-              <a href="#" className="block py-2 px-3 text-yellow-200 rounded" aria-current="page">Inicio</a>
-            </li>
-            <li>
-              <a href="#" className="block py-2 px-3 text-white rounded hover:text-yellow-200">Inicios de sesión</a>
+              <a href="#" className="block py-2 px-3 text-yellow-200 rounded">Inicios de sesión</a>
             </li>
             <li>
               <a href="#" className="block py-2 px-3 text-white rounded hover:text-yellow-200">Usuarios</a>
