@@ -1,47 +1,28 @@
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/solid';
-
 export function Navbar () {
   return (
-    <nav className="bg-gray-800 p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="text-white text-lg font-bold">
-          Mi Aplicación
-        </div>
-        <div className="space-x-4">
-          <a href="/" className="text-gray-300 hover:text-white">Inicio</a>
-          <a href="/users" className="text-gray-300 hover:text-white">Usuarios</a>
-          <a href="/login" className="text-gray-300 hover:text-white">Iniciar Sesión</a>
-          <Menu as="div" className="relative inline-block text-left">
-            <div>
-              <MenuButton className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-gray-800 text-sm font-medium text-white hover:bg-gray-700">
-                Más Opciones
-                <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
-              </MenuButton>
-            </div>
-            <MenuItems className="absolute right-0 z-10 mt-2 w-56 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-              <MenuItem>
-                {({ focus }) => (
-                  <a
-                    href="/about"
-                    className={`block px-4 py-2 text-sm ${focus ? 'bg-gray-100' : 'text-gray-700'}`}
-                  >
-                    Acerca de
-                  </a>
-                )}
-              </MenuItem>
-              <MenuItem>
-                {({ focus }) => (
-                  <a
-                    href="/contact"
-                    className={`block px-4 py-2 text-sm ${focus ? 'bg-gray-100' : 'text-gray-700'}`}
-                  >
-                    Contacto
-                  </a>
-                )}
-              </MenuItem>
-            </MenuItems>
-          </Menu>
+    <nav className="bg-color-td rounded-lg shadow m-4">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="/src/assets/logo.svg" className="h-8" alt="Flowbite Logo" />
+        </a>
+        <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+            <span className="sr-only">Open main menu</span>
+            <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+        </button>
+        <div className="hidden w-full md:block md:w-auto" id="navbar-default">
+          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+            <li>
+              <a href="#" className="block py-2 px-3 text-yellow-200 rounded" aria-current="page">Inicio</a>
+            </li>
+            <li>
+              <a href="#" className="block py-2 px-3 text-white rounded hover:text-yellow-200">Inicios de sesión</a>
+            </li>
+            <li>
+              <a href="#" className="block py-2 px-3 text-white rounded hover:text-yellow-200">Usuarios</a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
