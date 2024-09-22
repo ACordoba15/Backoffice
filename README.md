@@ -48,3 +48,9 @@ export default tseslint.config({
   },
 })
 ```
+
+
+# Tailwind
+[Tailwind](https://tailwindui.com/documentation#react-installing-dependencies)
+- `npm install -D tailwindcss postcss autoprefixer` Instalar tailwind
+- `npx tailwindcss init -p` Generar tailwind.config.js y postcss.config.js.
