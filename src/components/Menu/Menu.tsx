@@ -110,7 +110,7 @@ export const Menu = () => {
     }
 
     return (
-        <div className="relative table-height overflow-x-auto overflow-y-auto rounded-lg m-4 content">
+        <div className="relative overflow-x-auto overflow-y-auto rounded-lg m-4 content">
             <table className="w-full mx-auto text-sm text-left rtl:text-right">
                 <thead className="text-xs text-white uppercase bg-color-td">
                     <tr>

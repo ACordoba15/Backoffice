@@ -1,6 +1,6 @@
 export function Navbar() {
     return (
-        <nav className="bg-color-td shadow">
+        <nav className="bg-color-td shadow sticky top-0">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a
                     href="/"
