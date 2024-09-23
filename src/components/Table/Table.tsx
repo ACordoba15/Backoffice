@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { Records } from "../../types/Records";
+import { Record } from "../../types/Record";
 import "./Table.css";
 
 export const Table = () => {
-    const info: Records[] = [
+    const info: Record[] = [
         {
             id: 1,
             name: "Andres",
@@ -111,7 +111,7 @@ export const Table = () => {
         },
     ];
 
-    const [data, setData] = useState<Records[]>([]);
+    const [data, setData] = useState<Record[]>([]);
 
     useEffect(() => {
         return () => {
