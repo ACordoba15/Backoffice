@@ -1,20 +1,19 @@
 .bg-table {
-  background-color: #f5f5f5;
+    background-color: #f5f5f5;
 }
 
 .bg-row:hover {
-  background-color: rgba(0, 110, 38, 0.3);
+    background-color: rgba(0, 110, 38, 0.3);
 }
 
 .content {
-    margin-top: 50px;  /* Espacio suficiente para que el contenido no se oculte detrás del navbar */
+    margin-top: 50px; /* Espacio suficiente para que el contenido no se oculte detrás del navbar */
     margin-bottom: 50px; /* Espacio suficiente para que el contenido no se oculte detrás del footer */
-    /* padding: 20px; */
     background-color: #f1f1f1;
     height: calc(100vh - 350px); /* Ajusta la altura para no crear scroll innecesario */
     overflow-y: auto; /* Permite scroll si el contenido es muy largo */
 }
 
 .table-height {
-  max-height: 618px;
+    max-height: 618px;
 }
