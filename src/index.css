@@ -8,6 +8,21 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
+body {
+  background-image: url('src/assets/Fondo.svg');
+  background-size: cover;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;  /* Altura mínima de 100% del viewport */
+}
+
 .bg-color-td {
   background-color: #006E26; /* Color de fondo */
   padding: 10px 20px; /* Espaciado */

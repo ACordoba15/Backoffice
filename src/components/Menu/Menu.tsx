@@ -1,80 +1,112 @@
+import { useEffect, useState } from "react";
+import { Records } from "../../types/Records";
+import "./Menu.css";
+
 export const Menu = () => {
-  return (
-    <div className="relative overflow-x-auto rounded-lg m-4">
-        <table className="w-full mx-auto text-sm text-left rtl:text-right text-white">
-            <thead className="text-xs text-white uppercase bg-color-td">
-                <tr>
-                    <th scope="col" className="px-6 py-3">
-                        Product name
-                    </th>
-                    <th scope="col" className="px-6 py-3">
-                        Color
-                    </th>
-                    <th scope="col" className="px-6 py-3">
-                        Category
-                    </th>
-                    <th scope="col" className="px-6 py-3">
-                        Price
-                    </th>
-                    <th scope="col" className="px-6 py-3">
-                        <span className="sr-only">Edit</span>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Apple MacBook Pro 17"
-                    </th>
-                    <td className="px-6 py-4">
-                        Silver
-                    </td>
-                    <td className="px-6 py-4">
-                        Laptop
-                    </td>
-                    <td className="px-6 py-4">
-                        $2999
-                    </td>
-                    <td className="px-6 py-4 text-right">
-                        <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                    </td>
-                </tr>
-                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Microsoft Surface Pro
-                    </th>
-                    <td className="px-6 py-4">
-                        White
-                    </td>
-                    <td className="px-6 py-4">
-                        Laptop PC
-                    </td>
-                    <td className="px-6 py-4">
-                        $1999
-                    </td>
-                    <td className="px-6 py-4 text-right">
-                        <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                    </td>
-                </tr>
-                <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Magic Mouse 2
-                    </th>
-                    <td className="px-6 py-4">
-                        Black
-                    </td>
-                    <td className="px-6 py-4">
-                        Accessories
-                    </td>
-                    <td className="px-6 py-4">
-                        $99
-                    </td>
-                    <td className="px-6 py-4 text-right">
-                        <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-  )
-}
+    const info: Records[] = [
+        {
+            name: "Andres",
+            password: "12345",
+            date: new Date().toISOString(),
+            action: "Inicio de sesión",
+        },
+        {
+            name: "Pedro",
+            password: "12345",
+            date: new Date().toISOString(),
+            action: "Registro",
+        },
+        {
+            name: "Luis",
+            password: "12345",
+            date: new Date().toISOString(),
+            action: "Cambio de contraseña",
+        },
+        {
+            name: "Juan",
+            password: "12345",
+            date: new Date().toISOString(),
+            action: "Inicio de sesión",
+        },
+        {
+            name: "Rey",
+            password: "12345",
+            date: new Date().toISOString(),
+            action: "Registro",
+        },
+        
+    ];
+
+    const [data, setData] = useState<Records[]>([]);
+
+    useEffect(() => {
+        return () => {
+            handleInformation();
+        };
+    }, []);
+
+    function handleInformation(): void {
+        // get the data
+        setData(info);
+    }
+
+    return (
+        <div className="relative overflow-x-auto rounded-lg m-4 content">
+            <table className="w-full mx-auto text-sm text-left rtl:text-right">
+                <thead className="text-xs text-white uppercase bg-color-td">
+                    <tr>
+                        <th scope="col" className="px-6 py-3">
+                            Usuario
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Contraseña
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Fecha y hora
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Acción
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            <span className="sr-only">Edit</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {data.map((val, key) => {
+                        return (
+                            <tr
+                                className="text-black border-b border-gray-300 bg-row"
+                                key={key}
+                            >
+                                <th
+                                    scope="row"
+                                    className="px-6 py-4 font-medium whitespace-nowrap text-black"
+                                >
+                                    {val.name}
+                                </th>
+                                <td className="px-6 py-4 font-medium whitespace-nowrap">
+                                    {val.password}
+                                </td>
+                                <td className="px-6 py-4 font-medium whitespace-nowrap">
+                                    {val.date}
+                                </td>
+                                <td className="px-6 py-4 font-medium whitespace-nowrap">
+                                    {val.action}
+                                </td>
+                                <td className="px-6 py-4 text-right">
+                                    <a
+                                        href="#"
+                                        className="font-bold text-orange-400 hover:underline"
+                                    >
+                                        Edit
+                                    </a>
+                                </td>
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
+        </div>
+    );
+};

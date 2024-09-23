@@ -8,8 +8,10 @@ import { Menu } from './components/Menu/Menu'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Navbar/>
-    <Menu/>
-    <Footer/>
+    <div className='main-container'>
+      <Navbar/>
+      <Menu/>
+      <Footer/>
+    </div>
   </StrictMode>,
 )
