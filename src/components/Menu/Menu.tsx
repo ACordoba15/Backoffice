@@ -5,90 +5,105 @@ import "./Menu.css";
 export const Menu = () => {
     const info: Records[] = [
         {
+            id: 1,
             name: "Andres",
             password: "12345",
             date: new Date().toISOString(),
             action: "Inicio de sesión",
         },
         {
+            id: 2,
             name: "Pedro",
             password: "12345",
             date: new Date().toISOString(),
             action: "Registro",
         },
         {
+            id: 3,
             name: "Luis",
             password: "12345",
             date: new Date().toISOString(),
             action: "Cambio de contraseña",
         },
         {
+            id: 4,
             name: "Juan",
             password: "12345",
             date: new Date().toISOString(),
             action: "Inicio de sesión",
         },
         {
+            id: 5,
             name: "Rey",
             password: "12345",
             date: new Date().toISOString(),
             action: "Registro",
         },
         {
+            id: 1,
             name: "Andres",
             password: "12345",
             date: new Date().toISOString(),
             action: "Inicio de sesión",
         },
         {
+            id: 2,
             name: "Pedro",
             password: "12345",
             date: new Date().toISOString(),
             action: "Registro",
         },
         {
+            id: 3,
             name: "Luis",
             password: "12345",
             date: new Date().toISOString(),
             action: "Cambio de contraseña",
         },
         {
+            id: 4,
             name: "Juan",
             password: "12345",
             date: new Date().toISOString(),
             action: "Inicio de sesión",
         },
         {
+            id: 5,
             name: "Rey",
             password: "12345",
             date: new Date().toISOString(),
             action: "Registro",
         },
         {
+            id: 1,
             name: "Andres",
             password: "12345",
             date: new Date().toISOString(),
             action: "Inicio de sesión",
         },
         {
+            id: 2,
             name: "Pedro",
             password: "12345",
             date: new Date().toISOString(),
             action: "Registro",
         },
         {
+            id: 3,
             name: "Luis",
             password: "12345",
             date: new Date().toISOString(),
             action: "Cambio de contraseña",
         },
         {
+            id: 4,
             name: "Juan",
             password: "12345",
             date: new Date().toISOString(),
             action: "Inicio de sesión",
         },
         {
+            id: 5,
             name: "Rey",
             password: "12345",
             date: new Date().toISOString(),
@@ -112,22 +127,19 @@ export const Menu = () => {
     return (
         <div className="relative overflow-x-auto overflow-y-auto rounded-lg m-4 content">
             <table className="w-full mx-auto text-sm text-left rtl:text-right">
-                <thead className="text-xs text-white uppercase bg-color-td">
+                <thead className="text-xs text-white uppercase bg-color-td sticky top-0">
                     <tr>
                         <th scope="col" className="px-6 py-3">
-                            Usuario
+                            ID
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            Contraseña
+                            Usuario
                         </th>
                         <th scope="col" className="px-6 py-3">
                             Fecha y hora
                         </th>
                         <th scope="col" className="px-6 py-3">
                             Acción
-                        </th>
-                        <th scope="col" className="px-6 py-3">
-                            <span className="sr-only">Edit</span>
                         </th>
                     </tr>
                 </thead>
@@ -142,24 +154,16 @@ export const Menu = () => {
                                     scope="row"
                                     className="px-6 py-4 font-medium whitespace-nowrap text-black"
                                 >
-                                    {val.name}
+                                    {val.id}
                                 </th>
                                 <td className="px-6 py-4 font-medium whitespace-nowrap">
-                                    {val.password}
+                                    {val.name}
                                 </td>
                                 <td className="px-6 py-4 font-medium whitespace-nowrap">
                                     {val.date}
                                 </td>
-                                <td className="px-6 py-4 font-medium whitespace-nowrap">
+                                <td className="px-6 py-4 font-medium whitespace-nowrap text-orange-400">
                                     {val.action}
-                                </td>
-                                <td className="px-6 py-4 text-right">
-                                    <a
-                                        href="#"
-                                        className="font-bold text-orange-400 hover:underline"
-                                    >
-                                        Edit
-                                    </a>
                                 </td>
                             </tr>
                         );

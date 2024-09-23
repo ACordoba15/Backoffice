@@ -1,6 +1,7 @@
 export interface Records {
-  name: string;
-  password: string;
-  date: string;
-  action: string;
+    id: number,
+    name: string;
+    password: string;
+    date: string;
+    action: string;
 }
