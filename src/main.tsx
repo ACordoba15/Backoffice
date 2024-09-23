@@ -9,6 +9,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Home } from './pages/Home'
 
 import './index.css'
+
 import { Record } from './pages/Record'
 import { User } from './pages/User'
 import { NotFound } from './pages/NotFound'
