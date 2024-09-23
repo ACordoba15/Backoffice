@@ -13,7 +13,7 @@ export const Footer = () => {
                     <ul className="flex flex-wrap items-center mb-6 text-sm font-medium sm:mb-0 text-white">
                         <li>
                             <a
-                                href="#"
+                                href="/Records"
                                 className="hover:underline me-4 md:me-6 hover:text-orange-400"
                             >
                                 Bitacora
@@ -21,7 +21,7 @@ export const Footer = () => {
                         </li>
                         <li>
                             <a
-                                href="#"
+                                href="/Users"
                                 className="hover:underline me-4 md:me-6 hover:text-orange-400"
                             >
                                 Usuarios

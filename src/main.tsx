@@ -5,39 +5,44 @@ import { Navbar } from './components/Navbar/Navbar'
 import { Footer } from './components/Footer/Footer'
 import { Table } from './components/Table/Table'
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, useLocation } from 'react-router-dom'
 
 import { Home } from './pages/Home'
 
 import './index.css'
 import { Record } from './pages/Record'
 import { User } from './pages/User'
+import { NotFound } from './pages/NotFound'
+
+// Validación para mostrar navbar y header
+const paths = ["/", "/Records", "/Users"]
+const showNavAndHeader = paths.includes(location.pathname.trim());
 
 // Rutas
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Home/>,
-        errorElement: <div>404 Not Found</div>
+        errorElement: <NotFound/>
     },
     {
         path: '/Records',
         element: <Record/>,
-        errorElement: <div>404 Not Found</div>
+        errorElement: <NotFound/>
     },
     {
         path: '/Users',
         element: <User/>,
-        errorElement: <div>404 Not Found</div>
+        errorElement: <NotFound/>
     }
 ]);
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
         <div className='main-container'>
-            <Navbar />
+            {showNavAndHeader && <Navbar />}
             <RouterProvider router={router} />
-            <Footer />
+            {showNavAndHeader && <Footer />}
         </div>
     </StrictMode>,
 )

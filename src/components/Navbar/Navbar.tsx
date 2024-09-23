@@ -43,15 +43,15 @@ export function Navbar() {
                     <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
                         <li>
                             <a
-                                href="#"
-                                className="block py-2 px-3 text-orange-400 rounded"
+                                href="/Records"
+                                className="block py-2 px-3 text-white rounded hover:text-orange-400"
                             >
                                 Bitacora
                             </a>
                         </li>
                         <li>
                             <a
-                                href="#"
+                                href="/Users"
                                 className="block py-2 px-3 text-white rounded hover:text-orange-400"
                             >
                                 Usuarios
