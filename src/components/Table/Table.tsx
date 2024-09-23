@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Records } from "../../types/Records";
-import "./Menu.css";
+import "./Table.css";
 
-export const Menu = () => {
+export const Table = () => {
     const info: Records[] = [
         {
             id: 1,

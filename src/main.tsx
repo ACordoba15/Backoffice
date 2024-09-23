@@ -3,14 +3,14 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { Navbar } from './components/Navbar/Navbar'
 import { Footer } from './components/Footer/Footer'
-import { Menu } from './components/Menu/Menu'
+import { Table } from './components/Table/Table'
 
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <div className='main-container'>
       <Navbar/>
-      <Menu/>
+      <Table/>
       <Footer/>
     </div>
   </StrictMode>,
