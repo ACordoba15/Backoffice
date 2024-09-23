@@ -3,9 +3,8 @@ import { createRoot } from 'react-dom/client'
 
 import { Navbar } from './components/Navbar/Navbar'
 import { Footer } from './components/Footer/Footer'
-import { Table } from './components/Table/Table'
 
-import { createBrowserRouter, RouterProvider, useLocation } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import { Home } from './pages/Home'
 
