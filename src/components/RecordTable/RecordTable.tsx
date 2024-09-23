@@ -1,111 +1,95 @@
 import { useEffect, useState } from "react";
 import { Record } from "../../types/Record";
-import "./Table.css";
 
-export const Table = () => {
+export const RecordTable = () => {
     const info: Record[] = [
         {
             id: 1,
             name: "Andres",
-            password: "12345",
             date: new Date().toISOString(),
             action: "Inicio de sesión",
         },
         {
             id: 2,
             name: "Pedro",
-            password: "12345",
             date: new Date().toISOString(),
             action: "Registro",
         },
         {
             id: 3,
             name: "Luis",
-            password: "12345",
             date: new Date().toISOString(),
             action: "Cambio de contraseña",
         },
         {
             id: 4,
             name: "Juan",
-            password: "12345",
             date: new Date().toISOString(),
             action: "Inicio de sesión",
         },
         {
             id: 5,
             name: "Rey",
-            password: "12345",
             date: new Date().toISOString(),
             action: "Registro",
         },
         {
             id: 1,
             name: "Andres",
-            password: "12345",
             date: new Date().toISOString(),
             action: "Inicio de sesión",
         },
         {
             id: 2,
             name: "Pedro",
-            password: "12345",
             date: new Date().toISOString(),
             action: "Registro",
         },
         {
             id: 3,
             name: "Luis",
-            password: "12345",
             date: new Date().toISOString(),
             action: "Cambio de contraseña",
         },
         {
             id: 4,
             name: "Juan",
-            password: "12345",
             date: new Date().toISOString(),
             action: "Inicio de sesión",
         },
         {
             id: 5,
             name: "Rey",
-            password: "12345",
             date: new Date().toISOString(),
             action: "Registro",
         },
         {
             id: 1,
             name: "Andres",
-            password: "12345",
             date: new Date().toISOString(),
             action: "Inicio de sesión",
         },
         {
             id: 2,
             name: "Pedro",
-            password: "12345",
             date: new Date().toISOString(),
             action: "Registro",
         },
         {
             id: 3,
             name: "Luis",
-            password: "12345",
             date: new Date().toISOString(),
             action: "Cambio de contraseña",
         },
         {
             id: 4,
             name: "Juan",
-            password: "12345",
             date: new Date().toISOString(),
             action: "Inicio de sesión",
         },
         {
             id: 5,
             name: "Rey",
-            password: "12345",
             date: new Date().toISOString(),
             action: "Registro",
         },

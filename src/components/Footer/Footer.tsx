@@ -3,7 +3,8 @@ export const Footer = () => {
         <footer className="shadow bg-color-td sticky bottom-0">
             <div className="w-full max-w-screen-xl mx-auto p-4">
                 <div className="sm:flex sm:items-center sm:justify-between">
-                    <a className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                    <a className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+                        href="/">
                         <img
                             src="/src/assets/logo.svg"
                             className="h-8"

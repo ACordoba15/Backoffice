@@ -27,3 +27,14 @@ body {
   background-color: #006E26; /* Color de fondo */
   padding: 10px 20px; /* Espaciado */
 }
+
+.bg-row:hover {
+  background-color: rgba(0, 110, 38, 0.3);
+}
+
+.content {
+  margin-top: 50px; /* Espacio suficiente para que el contenido no se oculte detrás del navbar */
+  margin-bottom: 50px; /* Espacio suficiente para que el contenido no se oculte detrás del footer */
+  height: calc(100vh - 350px); /* Ajusta la altura para no crear scroll innecesario */
+  overflow-y: auto; /* Permite scroll si el contenido es muy largo */
+}

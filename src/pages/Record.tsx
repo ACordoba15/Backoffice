@@ -1,7 +1,7 @@
-import { Table } from "../components/Table/Table"
+import { RecordTable } from "../components/RecordTable/RecordTable"
 
 export const Record = () => {
     return (
-        <div><Table /></div>
+        <div><RecordTable /></div>
     )
 }
