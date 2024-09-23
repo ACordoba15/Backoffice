@@ -13,7 +13,7 @@ html, body {
 }
 
 body {
-  background-image: url('src/assets/Fondo.svg');
+  background-image: url('src/assets/fondo.svg');
   background-size: cover;
 }
 

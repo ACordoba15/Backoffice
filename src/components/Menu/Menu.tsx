@@ -34,7 +34,66 @@ export const Menu = () => {
             date: new Date().toISOString(),
             action: "Registro",
         },
-        
+        {
+            name: "Andres",
+            password: "12345",
+            date: new Date().toISOString(),
+            action: "Inicio de sesión",
+        },
+        {
+            name: "Pedro",
+            password: "12345",
+            date: new Date().toISOString(),
+            action: "Registro",
+        },
+        {
+            name: "Luis",
+            password: "12345",
+            date: new Date().toISOString(),
+            action: "Cambio de contraseña",
+        },
+        {
+            name: "Juan",
+            password: "12345",
+            date: new Date().toISOString(),
+            action: "Inicio de sesión",
+        },
+        {
+            name: "Rey",
+            password: "12345",
+            date: new Date().toISOString(),
+            action: "Registro",
+        },
+        {
+            name: "Andres",
+            password: "12345",
+            date: new Date().toISOString(),
+            action: "Inicio de sesión",
+        },
+        {
+            name: "Pedro",
+            password: "12345",
+            date: new Date().toISOString(),
+            action: "Registro",
+        },
+        {
+            name: "Luis",
+            password: "12345",
+            date: new Date().toISOString(),
+            action: "Cambio de contraseña",
+        },
+        {
+            name: "Juan",
+            password: "12345",
+            date: new Date().toISOString(),
+            action: "Inicio de sesión",
+        },
+        {
+            name: "Rey",
+            password: "12345",
+            date: new Date().toISOString(),
+            action: "Registro",
+        },
     ];
 
     const [data, setData] = useState<Records[]>([]);
@@ -51,7 +110,7 @@ export const Menu = () => {
     }
 
     return (
-        <div className="relative overflow-x-auto rounded-lg m-4 content">
+        <div className="relative table-height overflow-x-auto overflow-y-auto rounded-lg m-4 content">
             <table className="w-full mx-auto text-sm text-left rtl:text-right">
                 <thead className="text-xs text-white uppercase bg-color-td">
                     <tr>
