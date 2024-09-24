@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { User } from "../../types/User";
+import axios from "axios";
 
 export const UserTable = () => {
+    const base: string = "http://localhost:8000/api";
+
     const info: User[] = [
         {
             id: 1,
@@ -51,7 +54,13 @@ export const UserTable = () => {
 
     function handleInformation(): void {
         // get the data
-        setData(info);
+        axios.get(`${base}/user/all`)
+            .then(response => {
+                setData(response.data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
     }
 
     function togglePasswordVisibility (userId: number): void {

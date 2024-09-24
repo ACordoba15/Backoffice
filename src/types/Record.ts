@@ -1,6 +1,7 @@
 export type Record = {
     id: number;
-    name: string;
-    date: string;
+    username: string;
     action: string;
+    createdAt: string;
+    updatedAt: string;
 }

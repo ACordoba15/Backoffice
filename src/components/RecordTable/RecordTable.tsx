@@ -1,99 +1,9 @@
 import { useEffect, useState } from "react";
 import { Record } from "../../types/Record";
+import axios from "axios";
 
 export const RecordTable = () => {
-    const info: Record[] = [
-        {
-            id: 1,
-            name: "Andres",
-            date: new Date().toISOString(),
-            action: "Inicio de sesión",
-        },
-        {
-            id: 2,
-            name: "Pedro",
-            date: new Date().toISOString(),
-            action: "Registro",
-        },
-        {
-            id: 3,
-            name: "Luis",
-            date: new Date().toISOString(),
-            action: "Cambio de contraseña",
-        },
-        {
-            id: 4,
-            name: "Juan",
-            date: new Date().toISOString(),
-            action: "Inicio de sesión",
-        },
-        {
-            id: 5,
-            name: "Rey",
-            date: new Date().toISOString(),
-            action: "Registro",
-        },
-        {
-            id: 1,
-            name: "Andres",
-            date: new Date().toISOString(),
-            action: "Inicio de sesión",
-        },
-        {
-            id: 2,
-            name: "Pedro",
-            date: new Date().toISOString(),
-            action: "Registro",
-        },
-        {
-            id: 3,
-            name: "Luis",
-            date: new Date().toISOString(),
-            action: "Cambio de contraseña",
-        },
-        {
-            id: 4,
-            name: "Juan",
-            date: new Date().toISOString(),
-            action: "Inicio de sesión",
-        },
-        {
-            id: 5,
-            name: "Rey",
-            date: new Date().toISOString(),
-            action: "Registro",
-        },
-        {
-            id: 1,
-            name: "Andres",
-            date: new Date().toISOString(),
-            action: "Inicio de sesión",
-        },
-        {
-            id: 2,
-            name: "Pedro",
-            date: new Date().toISOString(),
-            action: "Registro",
-        },
-        {
-            id: 3,
-            name: "Luis",
-            date: new Date().toISOString(),
-            action: "Cambio de contraseña",
-        },
-        {
-            id: 4,
-            name: "Juan",
-            date: new Date().toISOString(),
-            action: "Inicio de sesión",
-        },
-        {
-            id: 5,
-            name: "Rey",
-            date: new Date().toISOString(),
-            action: "Registro",
-        },
-    ];
+    const base: string = "http://localhost:8000/api";
 
     const [data, setData] = useState<Record[]>([]);
 
@@ -105,7 +15,13 @@ export const RecordTable = () => {
 
     function handleInformation(): void {
         // get the data
-        setData(info);
+        axios.get(`${base}/record/all`)
+            .then(response => {
+                setData(response.data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
     }
 
     return (
@@ -141,10 +57,10 @@ export const RecordTable = () => {
                                     {val.id}
                                 </th>
                                 <td className="px-6 py-4 font-medium whitespace-nowrap">
-                                    {val.name}
+                                    {val.username}
                                 </td>
                                 <td className="px-6 py-4 font-medium whitespace-nowrap">
-                                    {val.date}
+                                    {val.createdAt}
                                 </td>
                                 <td className="px-6 py-4 font-medium whitespace-nowrap text-orange-400">
                                     {val.action}
