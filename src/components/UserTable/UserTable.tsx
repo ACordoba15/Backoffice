@@ -5,44 +5,6 @@ import axios from "axios";
 export const UserTable = () => {
     const base: string = "http://localhost:8000/api";
 
-    const info: User[] = [
-        {
-            id: 1,
-            username: "Andres",
-            password: "f61cc049-3aba-46e9-a867-aba2b68d8c6e",
-            createdAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString(),
-        },
-        {
-            id: 2,
-            username: "Pedro",
-            password: "a0e0487c-c2c8-4bf5-b594-0e89f4fc8880",
-            createdAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString(),
-        },
-        {
-            id: 3,
-            username: "Luis",
-            password: "6db114d5-8253-4dec-9a6c-7d8c0ba17737",
-            createdAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString(),
-        },
-        {
-            id: 4,
-            username: "Juan",
-            password: "318741cf-1d03-4a70-894e-84c7b112a889",
-            createdAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString(),
-        },
-        {
-            id: 5,
-            username: "Rey",
-            password: "cb280436-bf5b-4737-b8ba-36ce68be67a1",
-            createdAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString(),
-        },
-    ];
-
     const [data, setData] = useState<User[]>([]);
     const [visiblePasswords, setVisiblePasswords] = useState<Record<number, boolean>>({});
 
