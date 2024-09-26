@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-image: url('src/assets/fondo.svg');
+  background-size: cover;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;  /* Altura mínima de 100% del viewport */
+}
+
+.bg-color-td {
+  background-color: #006E26; /* Color de fondo */
+  padding: 10px 20px; /* Espaciado */
+}
+
+.bg-row:hover {
+  background-color: rgba(0, 110, 38, 0.3);
+}
+
+.content {
+  margin-top: 50px; /* Espacio suficiente para que el contenido no se oculte detrás del navbar */
+  margin-bottom: 50px; /* Espacio suficiente para que el contenido no se oculte detrás del footer */
+  height: calc(100vh - 350px); /* Ajusta la altura para no crear scroll innecesario */
+  overflow-y: auto; /* Permite scroll si el contenido es muy largo */
+}
