@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Card } from "../components/Cards/Cards";
 import axios from "axios";
-import { Record } from "../types/Record";
 
 export function Home() {
     const base: string = "http://localhost:8000/api";
