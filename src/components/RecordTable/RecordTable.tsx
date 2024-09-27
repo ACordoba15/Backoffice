@@ -8,9 +8,14 @@ export const RecordTable = () => {
     const [data, setData] = useState<Record[]>([]);
 
     useEffect(() => {
-        return () => {
-            handleInformation();
-        };
+        // Llama a la API cada 30 segundos
+        const intervalId = setInterval(handleInformation, 30000);
+
+        // Llama la primera vez sin esperar el intervalo
+        handleInformation();
+
+        // Limpiar el intervalo cuando el componente se desmonte
+        return () => clearInterval(intervalId);
     }, []);
 
     function handleInformation(): void {

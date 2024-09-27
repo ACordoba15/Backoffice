@@ -8,22 +8,33 @@ export function Home() {
     const [totalRecords, settotalRecords] = useState<number>(0);
 
     useEffect(() => {
-        axios.get(`${base}/user/all`)
-            .then(response => {
-                setTotalUsers(response.data.length)
-            })
-            .catch(error => {
-                console.error(error);
-            });
-        
-        axios.get(`${base}/record/all`)
-            .then(response => {
-                settotalRecords(response.data.length)
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        // Llama a la API cada 30 segundos
+        const intervalId = setInterval(fetchData, 30000);
+
+        // Llama la primera vez sin esperar el intervalo
+        fetchData();
+
+        // Limpiar el intervalo cuando el componente se desmonte
+        return () => clearInterval(intervalId);
     }, []);
+
+    const fetchData = async() => {
+        axios.get(`${base}/user/all`)
+        .then(response => {
+            setTotalUsers(response.data.length)
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    
+    axios.get(`${base}/record/all`)
+        .then(response => {
+            settotalRecords(response.data.length)
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    }
 
     return (
         <div className="relative overflow-x-auto overflow-y-auto rounded-lg m-4 content">
