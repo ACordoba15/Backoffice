@@ -28,6 +28,11 @@ body {
   padding: 10px 20px; /* Espaciado */
 }
 
+.bg-color-td-2 {
+  background-color: #F38A19; /* Color de fondo */
+  padding: 10px 20px; /* Espaciado */
+}
+
 .bg-row:hover {
   background-color: rgba(0, 110, 38, 0.3);
 }
