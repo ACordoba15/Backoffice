@@ -28,11 +28,11 @@ export function Home() {
     return (
         <div className="relative overflow-x-auto overflow-y-auto rounded-lg m-4 content">
             <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
-            <h1 className="text-2xl font-bold mb-4 text-orange-500">Dashboard</h1>
-            <div>
-                <Card title="Total de Usuarios" value={totalUsers} path="/Users"/>
-                <Card title="Total de Registros" value={totalRecords} path="/Records"/>
-            </div>
+                <h1 className="text-2xl font-bold mb-4 text-orange-500">Dashboard</h1>
+                <div>
+                    <Card title="Total de Usuarios" value={totalUsers} path="/Users"/>
+                    <Card title="Total de Registros" value={totalRecords} path="/Records"/>
+                </div>
             </div>
         </div>
     )

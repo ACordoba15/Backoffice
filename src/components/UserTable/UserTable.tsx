@@ -79,9 +79,9 @@ export const UserTable = () => {
                                 <td className="px-6 py-4 font-medium whitespace-nowrap">
                                     <button
                                         onClick={() => togglePasswordVisibility(val.id)}
-                                        className="py-1 px-3 rounded"
+                                        className="py-1 px-3"
                                     >
-                                        {visiblePasswords[val.id] ? <img src="/src/assets/eye-slash.svg" alt="eye-slash"/> : <img src="/src/assets/eye.svg" alt="eye"/>}
+                                        {visiblePasswords[val.id] ? <img src="/src/assets/eye-slash.svg" className="icon-eye" alt="eye-slash"/> : <img src="/src/assets/eye.svg" className="icon-eye" alt="eye"/>}
                                     </button>
                                 </td>
                                 <td className="px-6 py-4 font-medium whitespace-nowrap">

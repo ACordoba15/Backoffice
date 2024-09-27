@@ -43,3 +43,8 @@ body {
   height: calc(100vh - 350px); /* Ajusta la altura para no crear scroll innecesario */
   overflow-y: auto; /* Permite scroll si el contenido es muy largo */
 }
+
+.icon-eye {
+    min-width: 20px;
+    min-height: 20px;
+}
