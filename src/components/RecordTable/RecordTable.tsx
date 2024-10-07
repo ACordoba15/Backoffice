@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { Record } from "../../types/Record";
+import { RecordTS, RecordGO } from "../../types/Record";
 import axios from "axios";
 
 export const RecordTable = () => {
     const base: string = "http://localhost:8000/api";
 
-    const [data, setData] = useState<Record[]>([]);
+    const [data, setData] = useState<(RecordTS | RecordGO)[]>([]);
 
     useEffect(() => {
         // Llama a la API cada 30 segundos
@@ -59,16 +59,16 @@ export const RecordTable = () => {
                                     scope="row"
                                     className="px-6 py-4 font-medium whitespace-nowrap text-black"
                                 >
-                                    {val.id}
+                                    {'id' in val ? val.id : val.ID}
                                 </th>
                                 <td className="px-6 py-4 font-medium whitespace-nowrap">
-                                    {val.username}
+                                    {'username' in val ? val.username : val.Username}
                                 </td>
                                 <td className="px-6 py-4 font-medium whitespace-nowrap">
-                                    {val.createdAt}
+                                    {'createdAt' in val ? val.createdAt : val.CreatedAt}
                                 </td>
                                 <td className="px-6 py-4 font-medium whitespace-nowrap text-orange-400">
-                                    {val.action}
+                                    {'action' in val ? val.action : val.Action}
                                 </td>
                             </tr>
                         );

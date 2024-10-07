@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { User } from "../../types/User";
+import { UserGO, UserTS } from "../../types/User";
 import axios from "axios";
 
 export const UserTable = () => {
     const base: string = "http://localhost:8000/api";
 
-    const [data, setData] = useState<User[]>([]);
+    const [data, setData] = useState<(UserTS | UserGO)[]>([]);
     const [visiblePasswords, setVisiblePasswords] = useState<Record<number, boolean>>({});
 
     useEffect(() => {
@@ -24,6 +24,7 @@ export const UserTable = () => {
         axios.get(`${base}/user/all`)
             .then(response => {
                 setData(response.data);
+                console.log(response.data)
             })
             .catch(error => {
                 console.error(error);
@@ -73,27 +74,31 @@ export const UserTable = () => {
                                     scope="row"
                                     className="px-6 py-4 font-medium whitespace-nowrap text-black"
                                 >
-                                    {val.id}
+                                    { 'id' in val ? val.id : val.ID }
                                 </th>
                                 <td className="px-6 py-4 font-medium whitespace-nowrap">
-                                    {val.username}
+                                    { 'username' in val ? val.username : val.Username}
                                 </td>
                                 <td className="px-6 py-4 font-medium whitespace-nowrap">
-                                    {visiblePasswords[val.id] ? val.password : "**********"}
+                                    { 'password' in val ? (visiblePasswords[val.id] ? val.password : "**********") : (visiblePasswords[val.ID] ? val.Password : "**********")}
                                 </td>
                                 <td className="px-6 py-4 font-medium whitespace-nowrap">
                                     <button
-                                        onClick={() => togglePasswordVisibility(val.id)}
+                                        onClick={() => togglePasswordVisibility('id' in val ? val.id : val.ID)}
                                         className="py-1 px-3"
                                     >
-                                        {visiblePasswords[val.id] ? <img src="/src/assets/eye-slash.svg" className="icon-eye" alt="eye-slash"/> : <img src="/src/assets/eye.svg" className="icon-eye" alt="eye"/>}
+                                        {
+                                            visiblePasswords['id' in val ? val.id : val.ID ] ? 
+                                            <img src="/src/assets/eye-slash.svg" className="icon-eye" alt="eye-slash"/> : 
+                                            <img src="/src/assets/eye.svg" className="icon-eye" alt="eye"/>
+                                        }
                                     </button>
                                 </td>
                                 <td className="px-6 py-4 font-medium whitespace-nowrap">
-                                    {val.createdAt}
+                                    {'createdAt' in val ? val.createdAt : val.CreatedAt}
                                 </td>
                                 <td className="px-6 py-4 font-medium whitespace-nowrap">
-                                    {val.updatedAt}
+                                    { 'updatedAt' in val ? val.updatedAt : val.UpdatedAt}
                                 </td>
                             </tr>
                         );
