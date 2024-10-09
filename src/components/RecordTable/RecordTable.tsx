@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { RecordTS, RecordGO } from "../../types/Record";
 import axios from "axios";
+import { recordsMock } from "../../mocks/recordsMock";
 
 export const RecordTable = () => {
     const base: string = "http://localhost:8000/api";
@@ -26,13 +27,14 @@ export const RecordTable = () => {
             })
             .catch(error => {
                 console.error(error);
+                setData(recordsMock);
             });
     }
 
     return (
         <div className="relative overflow-x-auto overflow-y-auto rounded-lg m-4 content">
-            <table className="w-full mx-auto text-sm text-left rtl:text-right">
-                <thead className="text-xs text-white uppercase bg-color-td sticky top-0">
+            <table className="w-full mx-auto text-sm text-left rtl:text-right bg-white">
+                <thead className="text-xs text-white uppercase bg-gray-800 sticky top-0 border-b border-gray-700">
                     <tr>
                         <th scope="col" className="px-6 py-3">
                             ID
@@ -52,12 +54,12 @@ export const RecordTable = () => {
                     {data.map((val, key) => {
                         return (
                             <tr
-                                className="text-black border-b border-gray-300 bg-row"
+                                className="text-gray-800 border-b border-gray-300 hover:bg-gray-200"
                                 key={key}
                             >
                                 <th
                                     scope="row"
-                                    className="px-6 py-4 font-medium whitespace-nowrap text-black"
+                                    className="px-6 py-4 font-medium whitespace-nowrap"
                                 >
                                     {'id' in val ? val.id : val.ID}
                                 </th>
@@ -67,7 +69,7 @@ export const RecordTable = () => {
                                 <td className="px-6 py-4 font-medium whitespace-nowrap">
                                     {'createdAt' in val ? val.createdAt : val.CreatedAt}
                                 </td>
-                                <td className="px-6 py-4 font-medium whitespace-nowrap text-orange-400">
+                                <td className="px-6 py-4 font-medium whitespace-nowrap">
                                     {'action' in val ? val.action : val.Action}
                                 </td>
                             </tr>

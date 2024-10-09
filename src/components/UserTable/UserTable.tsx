@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { UserGO, UserTS } from "../../types/User";
 import axios from "axios";
+import { usersMocks } from "../../mocks/usersMock";
 
 export const UserTable = () => {
     const base: string = "http://localhost:8000/api";
@@ -28,6 +29,7 @@ export const UserTable = () => {
             })
             .catch(error => {
                 console.error(error);
+                setData(usersMocks);
             });
     }
 
@@ -40,8 +42,8 @@ export const UserTable = () => {
 
     return (
         <div className="relative overflow-x-auto overflow-y-auto rounded-lg m-4 content">
-            <table className="w-full mx-auto text-sm text-left rtl:text-right">
-                <thead className="text-xs text-white uppercase bg-color-td sticky top-0">
+            <table className="w-full mx-auto text-sm text-left rtl:text-right bg-white">
+                <thead className="text-xs uppercase text-white bg-gray-800 sticky top-0 border-b border-gray-700">
                     <tr>
                         <th scope="col" className="px-6 py-3">
                             ID
@@ -67,12 +69,12 @@ export const UserTable = () => {
                     {data.map((val, key) => {
                         return (
                             <tr
-                                className="text-black border-b border-gray-300 bg-row"
+                                className="text-gray-800 border-b border-gray-300 hover:bg-gray-200"
                                 key={key}
                             >
                                 <th
                                     scope="row"
-                                    className="px-6 py-4 font-medium whitespace-nowrap text-black"
+                                    className="px-6 py-4 font-medium whitespace-nowrap"
                                 >
                                     { 'id' in val ? val.id : val.ID }
                                 </th>
@@ -85,7 +87,7 @@ export const UserTable = () => {
                                 <td className="px-6 py-4 font-medium whitespace-nowrap">
                                     <button
                                         onClick={() => togglePasswordVisibility('id' in val ? val.id : val.ID)}
-                                        className="py-1 px-3"
+                                        className="py-1 px-3 text-gray-500"
                                     >
                                         {
                                             visiblePasswords['id' in val ? val.id : val.ID ] ? 
