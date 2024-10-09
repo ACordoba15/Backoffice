@@ -50,7 +50,13 @@ export default tseslint.config({
 ```
 
 
-# Tailwind
+## Tailwind
 [Tailwind](https://tailwindui.com/documentation#react-installing-dependencies)
 - `npm install -D tailwindcss postcss autoprefixer` Instalar tailwind
 - `npx tailwindcss init -p` Generar tailwind.config.js y postcss.config.js.
+
+## Ejecutar el proyecto
+- `npm run dev`
+
+## Backend
+[Backend](https://github.com/ACordoba15/be-user-maintenance-go) en Go que permite ver el registro de usuarios y una bitacora con las acciones del usuario
